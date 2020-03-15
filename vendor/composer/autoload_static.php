@@ -37,7 +37,6 @@ class ComposerStaticInit0cb981e78cc7252486e15fe02ee4bfd5
             'Zend\\Text\\' => 10,
             'Zend\\Test\\' => 10,
             'Zend\\Stdlib\\' => 12,
-            'Zend\\SkeletonInstaller\\' => 23,
             'Zend\\Session\\' => 13,
             'Zend\\ServiceManager\\Di\\' => 23,
             'Zend\\ServiceManager\\' => 20,
@@ -103,6 +102,10 @@ class ComposerStaticInit0cb981e78cc7252486e15fe02ee4bfd5
             'Doctrine\\Instantiator\\' => 22,
             'DeepCopy\\' => 9,
         ),
+        'B' => 
+        array (
+            'Bdr\\' => 4,
+        ),
         'A' => 
         array (
             'Application\\' => 12,
@@ -140,10 +143,6 @@ class ComposerStaticInit0cb981e78cc7252486e15fe02ee4bfd5
         'Zend\\Stdlib\\' => 
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-stdlib/src',
-        ),
-        'Zend\\SkeletonInstaller\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/zendframework/zend-skeleton-installer/src',
         ),
         'Zend\\Session\\' => 
         array (
@@ -341,6 +340,10 @@ class ComposerStaticInit0cb981e78cc7252486e15fe02ee4bfd5
         'DeepCopy\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
+        ),
+        'Bdr\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/module/Bdr/src',
         ),
         'Application\\' => 
         array (
