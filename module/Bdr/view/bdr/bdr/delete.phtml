@@ -9,8 +9,9 @@ $this->headTitle($title);
 
 <p>
     Are you sure that you want to delete
-    "<?= $this->escapeHtml($bdr->name) ?>"
-    "<?= $this->escapeHtml($bdr->picture) ?>"?
+    "<?= $this->escapeHtml($bdr->name) ?>"?
+    <br>
+    <img src="<?= $this->basePath('img/'.$bdr->picture ) ?> "height="100" alt="Zend Framework <?= \Application\Module::VERSION ?>"/>
 </p>
 
 <form action="<?= $url ?>" method="post">
