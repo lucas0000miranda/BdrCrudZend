@@ -6,6 +6,7 @@ use Zend\Mvc\Controller\AbstractActionController;
 use Bdr\Model\BdrTable;
 use Zend\View\Model\ViewModel;
 use Bdr\Form\BdrForm;
+use Bdr\Form\UploadForm;
 use Bdr\Model\Bdr;
 
 class BdrController extends AbstractActionController
@@ -71,17 +72,30 @@ class BdrController extends AbstractActionController
             return $viewData;
         }
 
+        $post = array_merge_recursive(
+        $request->getPost()->toArray(),
+        $request->getFiles()->toArray()
+        );
+
         $form->setInputFilter($bdr->getInputFilter());
-        $form->setData($request->getPost());
+        $form->setData($post);
 
         if (! $form->isValid()) {
             return $viewData;
         }
 
+        $fileProperties = [];
+        $data = $form->getData();
+        
+        foreach ($data as $item) {
+              $fileProperties[] = $item;
+        }
+
+        $bdr->picture = $fileProperties[4]['name'];
+
         $this->table->saveBdr($bdr);
 
         return $this->redirect()->toRoute('bdr', ['action' => 'index']);
-
     }
 
     public function deleteAction() {
@@ -107,6 +121,5 @@ class BdrController extends AbstractActionController
             'bdr' => $this->table->getBdr($id),
         ];
     }
-
 }
 
