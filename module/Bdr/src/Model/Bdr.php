@@ -7,7 +7,6 @@ use Zend\Filter\StringTrim;
 use Zend\Filter\StripTags;
 use Zend\Filter\ToInt;
 use Zend\InputFilter\InputFilter;
-use Zend\InputFilter\InputFilterAwareInterface;
 use Zend\InputFilter\InputFilterInterface;
 use Zend\Validator\StringLength;
 
@@ -125,22 +124,30 @@ class Bdr
 
         $inputFilter->add([
             'name' => 'picture',
-            'required' => true,
+            'required' => false,
             'filters' => [
-                ['name' => StripTags::class],
-                ['name' => StringTrim::class],
-            ],
-            'validators' => [
-                [
-                    'name' => StringLength::class,
-                    'options' => [
-                        'encoding' => 'UTF-8',
-                        'min' => 1,
-                        'max' => 100,
+                ['name' => 'FileRenameUpload',
+                 'options' => [
+                    'target' => "public/img",
+                    'useUploadName' => true,
+                    'useUploadExtension' => true,
+                    'overwrite' => true,
                     ],
                 ],
             ],
-        ]);
+            'validators' => [
+                    ['name' => 'FileUploadFile',
+                     'options' => [
+                       'mimeType' => ["image/jpeg", 'image/png'],
+                       'size' => [
+                           'max' => 204800,
+                           'maxWidth' => 100,
+                           'maxHeight' => 100
+                       ],
+                        ],
+                    ],
+                ],
+            ]);
 
         $this->inputFilter = $inputFilter;
         return $this->inputFilter;
