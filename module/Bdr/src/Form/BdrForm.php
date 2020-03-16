@@ -3,6 +3,7 @@
 namespace Bdr\Form;
 
 use Zend\Form\Form;
+use Zend\Form\Element;
 
 class BdrForm extends Form
 {
@@ -35,18 +36,17 @@ class BdrForm extends Form
                 'label' => 'Phone',
             ],
         ]);
-        $this->add([
-            'name' => 'picture',
-            'type' => 'text',
-            'options' => [
-                'label' => 'Picture',
-            ],
-        ]);
+        $file = new Element\File('picture');
+        $file->setLabel('Profile Avatar')
+             ->setAttribute('type', 'text')
+             ->setAttribute('id', 'picture');
+        $this->add($file);
+
         $this->add([
             'name' => 'submit',
             'type' => 'submit',
             'attributes' => [
-                'value' => 'Go',
+                'value' => 'Upload',
                 'id'    => 'submitbutton',
             ],
         ]);
