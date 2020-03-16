@@ -71,3 +71,11 @@ INSERT INTO `bdr` (`name`, `email`, `phone`, `picture`)
  VALUES ('Wilson', 'wilson.inlaw@em.com.br', '5432432400', '');
 ```
 
+# Screen Shots
+![alt text](![alt text](https://github.com/lucas0000miranda/BdrCrudZend/blob/master/bin/screen_shots/Captura%20de%20Tela%202020-03-15%20%C3%A0s%2022.10.14.png)
+
+![alt text](![alt text](https://github.com/lucas0000miranda/BdrCrudZend/blob/master/bin/screen_shots/Captura%20de%20Tela%202020-03-15%20%C3%A0s%2022.11.04.png)
+
+![alt text](![alt text](https://github.com/lucas0000miranda/BdrCrudZend/blob/master/bin/screen_shots/Captura%20de%20Tela%202020-03-15%20%C3%A0s%2022.11.21.png)
+
+![alt text](![alt text](https://github.com/lucas0000miranda/BdrCrudZend/blob/master/bin/screen_shots/Captura%20de%20Tela%202020-03-15%20%C3%A0s%2022.17.34.png)
