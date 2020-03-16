@@ -44,7 +44,7 @@ http://localhost:8080/
 
 # Data Base
 
-For run the database, you can use SQLITE and run the schema.sql (data/schema.sql). Or tha directlly:
+For run the database, you can use SQLITE and run the schema.sql (data/schema.sql). Or do that directlly:
 ```bash
 CREATE TABLE `bdr` (
     `id` INT(11) NOT NULL AUTO_INCREMENT,
@@ -71,3 +71,5 @@ INSERT INTO `bdr` (`name`, `email`, `phone`, `picture`)
  VALUES ('Wilson', 'wilson.inlaw@em.com.br', '5432432400', '');
 ```
 
+# Screen Shots
+![alt text](![alt text](https://github.com/lucas0000miranda/ava/blob/master/prints/Captura%20de%20Tela%202019-11-04%20%C3%A0s%2012.33.03.png)
