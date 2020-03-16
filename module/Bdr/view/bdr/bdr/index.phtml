@@ -13,15 +13,14 @@ $this->headTitle($title);
         <th>Name</th>
         <th>Email</th>
         <th>Phone</th>
-        <th>Picture</th>
-        <th>&nbsp;</th>
+        <th>Edit/Delete</th>
     </tr>
     <?php foreach ($clients as $client) : ?>
         <tr>
-            <td><?= $this->escapeHtml($client->name) ?></td>
+            <td><img src="<?= $this->basePath('img/'.$client->picture ) ?> "height="28" alt="Zend Framework <?= \Application\Module::VERSION ?>"/>
+                <?= $this->escapeHtml($client->name) ?></td>
             <td><?= $this->escapeHtml($client->email) ?></td>
             <td><?= $this->escapeHtml($client->phone) ?></td>
-            <td><?= $this->escapeHtml($client->picture) ?></td>
             <td>
                 <a href="<?= $this->url('bdr', ['action' => 'edit', 'id' => $client->id]) ?>">Edit</a>
                 <a href="<?= $this->url('bdr', ['action' => 'delete', 'id' => $client->id]) ?>">Delete</a>
