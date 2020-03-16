@@ -35,15 +35,29 @@ class BdrController extends AbstractActionController
             return ['form' => $form];
         }
 
+        $post = array_merge_recursive(
+        $request->getPost()->toArray(),
+        $request->getFiles()->toArray()
+        );
+
         $bdr = new Bdr();
         $form->setInputFilter($bdr->getInputFilter());
-        $form->setData($request->getPost());
+        $form->setData($post);
 
         if (! $form->isValid()) {
             return ['form' => $form];
         }
 
+        $fileProperties = [];
+        $data = $form->getData();
+
+        foreach ($data as $item) {
+            $fileProperties[] = $item;
+        }
+
         $bdr->exchangeArray($form->getData());
+        $bdr->picture = $fileProperties[4]['name'];
+
         $this->table->saveBdr($bdr);
         return $this->redirect()->toRoute('bdr');
     }
