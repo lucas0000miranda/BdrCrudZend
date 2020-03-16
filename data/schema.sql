@@ -3,7 +3,7 @@ CREATE TABLE `bdr` (
     `name` VARCHAR(255) NOT NULL,
     `email` VARCHAR(100) NOT NULL,
     `phone` VARCHAR(12) NOT NULL,
-    `picture` VARCHAR(100) NOT NULL,
+    `picture` VARCHAR(100),
     PRIMARY KEY (`id`)
 ) COLLATE='utf8_general_ci' ENGINE=InnoDB;
 
