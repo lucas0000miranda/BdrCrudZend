@@ -50,10 +50,11 @@ echo $this->form()->openTag($form);
         <?= $this->formElementErrors()->render($phone, ['class' => 'help-block']) ?>
     </div>
 
-    <div class="form-group">
-        <?= $this->formLabel($picture) ?>
-        <?= $this->formElement($picture) ?>
-        <?= $this->formElementErrors()->render($picture, ['class' => 'help-block']) ?>
+    <div class="form-element">
+        <?php $fileElement = $form->get('picture'); ?>
+        <?php echo $this->formLabel($fileElement); ?>
+        <?php echo $this->formFile($fileElement); ?>
+        <?php echo $this->formElementErrors($fileElement); ?>
     </div>
 
 <?php
